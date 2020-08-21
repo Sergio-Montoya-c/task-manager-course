@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 
-mongoose.connect(`${process.env.HOST}${process.env.DATABASE}`, {
+mongoose.connect(`${process.env.HOST}`, {
   useNewUrlParser: true,
   useCreateIndex: true,
   useFindAndModify: false,
