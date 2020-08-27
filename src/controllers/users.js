@@ -33,18 +33,17 @@ const me = async (req, res) => {
 
 const update = async (req, res) => {
   const params = req.body
-
   if (!validateParams(params, permitedParams)) return res.status(400).send( {
     error: 'Unpermitted params'
   })
 
   try {
-
     Object.keys(params).forEach( param => req.user[param] = params[param])
     await req.user.save()
 
     res.send(req.user)
   } catch (error) {
+    console.log(error)
     res.status(500).send(error)
   }
 }
